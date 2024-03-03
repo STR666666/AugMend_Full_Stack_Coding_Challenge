@@ -33,7 +33,7 @@ export const json = {
                 "name": "ssn",
                 "width": "50%",
                 "minWidth": "256px",
-                "title": "Social Security #"
+                "title": "Email Address"
               },
               {
                 "type": "text",
@@ -125,21 +125,6 @@ export const json = {
                 "startWithNewLine": false,
                 "title": "Zip Code"
               },
-              {
-                "type": "text",
-                "name": "phone",
-                "width": "34%",
-                "minWidth": "128px",
-                "title": "Phone #"
-              },
-              {
-                "type": "text",
-                "name": "email",
-                "width": "66%",
-                "minWidth": "256px",
-                "startWithNewLine": false,
-                "title": "Email Address"
-              }
             ],
             "title": "Contact Information",
             "width": "100%",
@@ -147,139 +132,56 @@ export const json = {
           },
           {
             "type": "panel",
-            "name": "emergency-contact",
+            "name": "health",
             "elements": [
               {
-                "type": "text",
-                "name": "emergency-contact-full-name",
-                "width": "66%",
-                "minWidth": "256px",
-                "title": "Full Name"
-              },
-              {
-                "type": "dropdown",
-                "name": "emergency-contact-relationship",
-                "width": "34%",
-                "minWidth": "128px",
-                "startWithNewLine": false,
-                "title": "Relationship",
-                "choices": [ "Family Member", "Friend", "Partner", "Work Colleague" ], 
-                "choicesOrder": "random",
-                "placeholder": "",
-                "allowClear": false
-              },
-              {
-                "type": "text",
-                "name": "emergency-contact-phone",
-                "width": "34%",
-                "minWidth": "128px",
-                "title": "Phone #"
-              },
-              {
-                "type": "text",
-                "name": "emergency-contact-address",
-                "width": "66%",
-                "minWidth": "256px",
-                "startWithNewLine": false,
-                "title": "Address"
-              }
-            ],
-            "title": "Emergency Contact Information",
-            "width": "100%",
-            "minWidth": "256px"
-          },
-          {
-            "type": "panel",
-            "name": "insurance",
-            "elements": [
-              {
-                "type": "text",
-                "name": "insurance-company",
-                "width": "66%",
-                "minWidth": "256px",
-                "title": "Insurance Company"
-              },
-              {
-                "type": "text",
-                "name": "insurance-policy-number",
-                "width": "34%",
-                "minWidth": "128px",
-                "startWithNewLine": false,
-                "title": "Policy #"
+                "type": "radiogroup",
+                "name": "seen_therapist",
+                "title": "Have you ever seen a therapist for mental health issues?",
+                "isRequired": true,
+                "choices": [
+                  "Yes",
+                  "No"
+                ]
               },
               {
                 "type": "radiogroup",
-                "name": "insurance-policyholder",
-                "width": "100%",
-                "minWidth": "256px",
-                "title": "Policyholder",
-                "defaultValue": "Personal",
-                "choices": [ "Personal", "Other" ],
-                "colCount": 0
+                "name": "medications",
+                "title": "Are you taking any medications?",
+                "isRequired": true,
+                "choices": [
+                  "Yes",
+                  "No"
+                ]
               },
               {
-                "type": "text",
-                "name": "policyholder-name",
-                "visibleIf": "{insurance-policyholder} = 'Other'",
-                "width": "66%",
-                "minWidth": "256px",
-                "title": "Holder Name"
-              },
-              {
-                "type": "dropdown",
-                "name": "policyholder-relationship",
-                "visibleIf": "{insurance-policyholder} = 'Other'",
-                "width": "34%",
-                "minWidth": "128px",
-                "startWithNewLine": false,
-                "title": "Relationship",
-                "choicesFromQuestion": "emergency-contact-relationship",
-                "choicesOrder": "random",
-                "placeholder": "",
-                "allowClear": false
-              },
-              {
-                "type": "text",
-                "name": "policyholder-birthdate",
-                "visibleIf": "{insurance-policyholder} = 'Other'",
-                "width": "34%",
-                "minWidth": "128px",
-                "title": "Date of Birth",
-                "inputType": "date"
-              },
-              {
-                "type": "text",
-                "name": "policyholder-ssn",
-                "visibleIf": "{insurance-policyholder} = 'Other'",
-                "width": "32%",
-                "minWidth": "128px",
-                "startWithNewLine": false,
-                "title": "Social Security #"
-              },
-              {
-                "type": "text",
-                "name": "policyholder-phone",
-                "visibleIf": "{insurance-policyholder} = 'Other'",
-                "width": "34%",
-                "minWidth": "128px",
-                "startWithNewLine": false,
-                "title": "Phone #"
-              },
-              {
-                "type": "comment",
-                "name": "policyholder-address",
-                "visibleIf": "{insurance-policyholder} = 'Other'",
-                "width": "100%",
-                "minWidth": "256px",
-                "title": "Address",
-                "autoGrow": true,
-                "allowResize": false
+                "type": "paneldynamic",
+                "name": "medicationDetails",
+                "title": "Please enter the details of the medication(s) you are taking:",
+                "visibleIf": "{medications} = 'Yes'",
+                "templateElements": [
+                  {
+                    "type": "text",
+                    "name": "medicationName",
+                    "title": "Medication Name"
+                  },
+                  {
+                    "type": "comment",
+                    "name": "medicationDetail",
+                    "title": "Details (dosage, frequency, etc.)"
+                  }
+                ],
+                "panelCount": 1,
+                "minPanelCount": 1,
+                "maxPanelCount": 10, // Adjust according to how many medications you want to allow users to add
+                "panelAddText": "Add a new medication",
+                "panelRemoveText": "Remove the medication"
               }
             ],
-            "title": "Insurance Information",
+            "title": "Health Information",
             "width": "100%",
             "minWidth": "256px"
-          }
+          },
         ]
       }
     ],
