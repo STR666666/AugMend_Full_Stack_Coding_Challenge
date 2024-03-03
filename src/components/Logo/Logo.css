@@ -1,0 +1,41 @@
+.header-row {
+    display: flex;
+    align-items: center;
+    padding: 5px; /* You can adjust the padding as needed */
+}
+
+.logo-cont {
+    padding: 5px;
+}
+
+.logo-image {
+    height: 50px; /* Reduce the height to make the logo smaller */
+    width: auto; /* This will maintain the aspect ratio */
+    margin-right: 30px; /* Adds space between the image and text */
+}
+
+.company {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Modulus Pro', sans-serif; /* Updated font-family */
+    font-size: 40px;
+    font-weight: 600; /* Updated font-weight for Semi Bold, if 600 is the correct weight for Modulus Pro Semi Bold */
+    color: #2982d5;
+    transform: translateY(-20px);
+}
+
+.Webshop input{
+    font-family: "Work Sans", sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    /* vertical-align: middle; This can be removed as align-items will take care of vertical alignment */
+    padding: 10px;
+    padding-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 25px; /* Corrected typo '25spx' to '25px' */
+    height: 45px;
+    border-radius: 5px;
+    border-width: 1px;
+    width: 330px;
+    /* Add margin-left if you want some space between this element and the previous */
+}
