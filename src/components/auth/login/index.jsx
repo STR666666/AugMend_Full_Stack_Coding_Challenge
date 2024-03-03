@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../../firebase/auth';
 import { useAuth } from '../../../contexts/authContext';
-import './login.css'; // Ensure this path is correct
+import './login.css'; // Make sure this path is correct
 import { Logo } from '../../Logo/Logo';
-import google_icon from '../../Assets/google_chrome_icon.png'; // Ensure this path is correct
-import facebook_icon from '../../Assets/facebook_icon.jpg'; // Ensure this path is correct
+import googleIcon from '../../Assets/google_chrome_icon.png'; // Update with the correct path
 
 export const Login = () => {
     const { userLoggedIn } = useAuth();
@@ -46,52 +45,59 @@ export const Login = () => {
     }
 
     return (
-        <div className="page">
-            <Logo></Logo>
-            <div className="allelements">
-                <div className="bigtext">Welcome back!</div>
-                <div className="container">
-                    <form onSubmit={onSubmit} className="left">
-                        <div className="text">Email address</div>
-                        <div className="webshop-input">
-                            <input
-                                type="email"
-                                placeholder="student@gmail.edu"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="text">Password</div>
-                        <div className="webshop-input">
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        {errorMessage && <div className="error-message">{errorMessage}</div>}
-                        <div className="webshop-signup">
-                            <button type="submit" disabled={isSigningIn} className="button">
-                                {isSigningIn ? 'Signing In...' : 'Let\'s go!'}
-                            </button>
-                        </div>
+        <div className="login-wrapper">
+            <Logo> </Logo>
+
+            <main className="login-main">
+                <div className="login-box">
+                    <h3 className="login-title">Welcome Back</h3>
+                    <form onSubmit={onSubmit} className="login-form">
+                        <label className="login-label">Email</label>
+                        <input
+                            type="email"
+                            autoComplete='email'
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="login-input"
+                        />
+
+                        <label className="login-label">Password</label>
+                        <input
+                            type="password"
+                            autoComplete='current-password'
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="login-input"
+                        />
+
+                        {errorMessage && (
+                            <div className="login-error">{errorMessage}</div>
+                        )}
+
+                        <button
+                            type="submit"
+                            disabled={isSigningIn}
+                            className="login-submit"
+                        >
+                            {isSigningIn ? 'Signing In...' : 'Sign In'}
+                        </button>
                     </form>
-                    <div className="right">
-                        <button onClick={onGoogleSignIn} disabled={isSigningIn} className="button-ext">
-                            <img src={google_icon} alt="Continue with Google" width="40" />
-                            <span>Continue with Google</span>
-                        </button>
-                        <button className="button-ext">
-                            <img src={facebook_icon} alt="Continue with Facebook" width="40" />
-                            <span>Continue with Facebook</span>
-                        </button>
-                        <div className="noaccques">
-                            Don't have an account? <Link to={'/register'}>Sign up</Link>
-                        </div>
+                    <p className="login-signup-link">Don't have an account? <Link to={'/register'}>Sign up</Link></p>
+                    <div className="login-divider">
+                        <span className="login-or">OR</span>
                     </div>
+                    <button
+                        disabled={isSigningIn}
+                        onClick={onGoogleSignIn}
+                        className="login-google-btn"
+                    >
+                        <img src={googleIcon} alt="Google" className="google-icon" />
+                        {isSigningIn ? 'Signing In...' : 'Continue with Google'}
+                    </button>
                 </div>
-            </div>
+            </main>
         </div>
     );
 };
