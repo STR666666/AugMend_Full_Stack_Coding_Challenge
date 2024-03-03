@@ -1,38 +1,39 @@
-body{
-    background-color:#e8e9ec
+body {
+    background-color: #e8e9ec;
 }
-.page{
+
+.page {
     padding: 50px;
 }
 
-.allelements{
+.allelements {
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle; /* 'center' is not a valid value for vertical-align */
     padding: 50px;
 }
 
-.bigtext{
+.bigtext {
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 40px;
     font-weight: 500;
 }
 
-.container{
+.container {
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle; /* 'center' is not a valid value for vertical-align */
     width: 100%;
     height: 100%;
 }
 
-.left{
+.left {
     display: inline-block;
     padding: 30px;
     padding-right: 200px;
     text-align: left;
 } 
 
-.right{
+.right {
     display: inline-block;
     border-left: 1px solid rgb(0, 0, 0);
     padding: 30px;
@@ -41,22 +42,22 @@ body{
     vertical-align: bottom;
 }
 
-.text{
+.text {
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 25px;
     padding-bottom: 10px;
-    padding-top: 35px
+    padding-top: 35px;
 }
 
-.noaccques{
+.noaccques {
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 25px;
-    margin-top: 50px
+    margin-top: 50px;
 }
 
-#Webshop input{
+.webshop-input input { /* Changed from '#Webshop input' */
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 25px;
@@ -64,14 +65,14 @@ body{
     padding: 10px;
     padding-left: 15px;
     margin-top: 20px;
-    margin-bottom: 25spx;
+    margin-bottom: 25px; /* Corrected typo '25spx' to '25px' */
     height: 45px;
     border-radius: 5px;
     border-width: 1px;
     width: 330px;
 }
 
-#Webshop2 button{
+.webshop-signup button { /* Changed from '#Webshop2 button' */
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 25px;
@@ -88,11 +89,11 @@ body{
     transition-duration: 0.4s;
 }
 
-#Webshop2 button:hover{
+.webshop-signup button:hover { /* Changed from '#Webshop2 button:hover' */
     background-color: #456291;
 }
 
-#Webshop button{
+.button { /* Changed from '#Webshop button' */
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 25px;
@@ -109,11 +110,11 @@ body{
     transition-duration: 0.4s;
 }
 
-#Webshop button:hover{
+.button:hover { /* Changed from '#Webshop button:hover' */
     background-color: #456291;
 }
 
-#ExtWebshop button{
+.button-ext { /* Changed from '#ExtWebshop button' */
     font-family: "Work Sans", sans-serif;
     font-style: normal;
     font-size: 22px;
@@ -127,15 +128,16 @@ body{
     margin-bottom: 25px;
 }
 
-#ExtWebshop button:hover{
+.button-ext:hover { /* Changed from '#ExtWebshop button:hover' */
     background-color: #dddddd;
 }
 
-#Webshop img {
+.button-ext img { /* Added this to target the images inside .button-ext */
     padding-right: 25px;
 }
 
-#Webshop text {
+.button-ext span { /* Changed from '#Webshop text' and corrected the selector */
+    display: inline-block; /* Added this to ensure proper alignment */
     text-align: center;
-    vertical-align: 13px;
+    vertical-align: middle;
 }
