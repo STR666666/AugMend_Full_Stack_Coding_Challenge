@@ -1,23 +1,25 @@
+/* Import Publica Play font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Publica+Play&display=swap');
+
 .header-row {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px; /* You can adjust the padding as needed */
+    padding: 10px;
 }
 
 .logo-image {
-    height: 50px; /* Reduce the height to make the logo smaller */
-    width: auto; /* This will maintain the aspect ratio */
-    margin-right: 30px; /* Adds space between the image and text */
+    height: 50px;
+    width: auto;
+    margin-right: 30px;
 }
 
 .company {
     display: inline-block;
     vertical-align: middle;
-    font-family: 'Modulus Pro', sans-serif; /* Updated font-family */
+    font-family: 'Publica Play', sans-serif; /* Apply Publica Play font */
     font-size: 32px;
-    font-weight: 600; /* Updated font-weight for Semi Bold, if 600 is the correct weight for Modulus Pro Semi Bold */
+    font-weight: 600;
     color: #2982d5;
-    transform: translateY(-5px);
-    margin-left: -10px;
+    margin-left: -15px; 
 }
