@@ -4,7 +4,7 @@ export const json = {
     "logo": "https://assets-global.website-files.com/63ed66efadb8bc109fc6330c/63ee84caab7b90b056549581_220921_logo_transparent-37.png",
     "logoWidth": "70",
     "logoHeight": "96",
-    "completedHtml": "<div style=\"max-width:540px;text-align:left;margin:0px auto 16px auto;border: 1px solid rgba(0,0,0,0.25);padding:40px 48px 48px 48px;background-color:#fff;\">\n\n<h4>Thank you for completing your patient registration form.</h4>\n<br>\n<p>Dear {firstname-for-complete-page},\n<br>\nYour information has been successfully received, and we look forward to providing you with the highest level of care. \n<br><br>\nIf you have any questions or need to schedule an appointment, please don't hesitate to reach out to our office. Our team is here to assist you every step of the way.\n<br><br>\nWarm regards,\n<br>\nCentral Hospital.</p>\n\n</div>",
+    "completedHtml": "<div style=\"max-width:540px;text-align:left;margin:0px auto 16px auto;border: 1px solid rgba(0,0,0,0.25);padding:40px 48px 48px 48px;background-color:#fff;\">\n\n<h4>Thank you for completing your patient registration form.</h4>\n<br>\n<p>Dear {firstname-for-complete-page},\n<br>\nYour information has been successfully received, and we look forward to providing you with the highest level of care. \n<br><br>\nIf you have any questions or need to schedule an appointment, please don't hesitate to reach out to our office. Our team is here to assist you every step of the way.\n<br><br>\nWarm regards,\n<br>\nAugMend Health.</p>\n\n</div>",
     "pages": [
       {
         "name": "page1",
@@ -30,7 +30,7 @@ export const json = {
               },
               {
                 "type": "text",
-                "name": "ssn",
+                "name": "email",
                 "width": "50%",
                 "minWidth": "256px",
                 "title": "Email Address"
@@ -136,7 +136,7 @@ export const json = {
             "elements": [
               {
                 "type": "radiogroup",
-                "name": "seen_therapist",
+                "name": "seen-therapist",
                 "title": "Have you ever seen a therapist for mental health issues?",
                 "isRequired": true,
                 "choices": [
@@ -191,7 +191,7 @@ export const json = {
     }],
     "showQuestionNumbers": "off",
     "questionErrorLocation": "bottom",
-    "completeText": "Register",
+    "completeText": "Submit",
     "questionsOnPageMode": "singlePage",
     "widthMode": "static",
     "width": "1024",
