@@ -16,6 +16,7 @@ export const json = {
               {
                 "type": "text",
                 "name": "first-name",
+                "isRequired": true,
                 "width": "50%",
                 "minWidth": "256px",
                 "title": "First Name"
@@ -23,6 +24,7 @@ export const json = {
               {
                 "type": "text",
                 "name": "last-name",
+                "isRequired": true,
                 "width": "50%",
                 "minWidth": "256px",
                 "startWithNewLine": false,
@@ -31,6 +33,7 @@ export const json = {
               {
                 "type": "text",
                 "name": "email",
+                "isRequired": true,
                 "width": "50%",
                 "minWidth": "256px",
                 "title": "Email Address"
@@ -47,6 +50,7 @@ export const json = {
               {
                 "type": "dropdown",
                 "name": "marital-status",
+                "isRequired": true,
                 "width": "50%",
                 "minWidth": "256px",
                 "title": "Marital Status",
