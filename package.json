@@ -1,5 +1,5 @@
 {
-  "name": "augmend_tech_challenge",
+  "name": "augmend_full_stack_coding_challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,8 +11,11 @@
     "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.22.2",
     "react-scripts": "5.0.1",
+    "survey-core": "^1.9.132",
+    "survey-react": "^1.9.132",
+    "survey-react-ui": "^1.9.132",
     "tailwindcss": "^3.4.1",
     "web-vitals": "^2.1.4"
   },
