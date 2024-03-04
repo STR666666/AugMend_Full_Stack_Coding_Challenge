@@ -106,13 +106,31 @@ async def submit_survey(survey_data: SurveyResponseSchema):
     # try:
     # Use Pydantic model's .dict() method with by_alias=True to respect field aliases
     data_dict = survey_data.dict(by_alias=True)
-    print(data_dict)
+    # print(data_dict)
     # Optionally transform any data as needed before saving
     # For example, handling date conversion if not automatically done by Pydantic
 
     # Create a new SurveyResponse record using the transformed data
-    SurveyResponse.create(**data_dict)
+    # SurveyResponse.create(**data_dict)
 
+    # return {"message": "Survey submitted successfully"}
+
+    new_survey_response = SurveyResponse.create(
+            first_name=data_dict.get("first-name", None),  # Using get() to avoid KeyError if key is missing
+            last_name=data_dict.get("last-name", None),
+            email=data_dict.get("email", None),
+            birthdate=data_dict.get("birthdate", None),
+            marital_status=data_dict.get("marital-status", None),
+            gender=data_dict.get("gender", None),
+            address=data_dict.get("address", None),
+            apartment_number=data_dict.get("apartment-number", None),
+            city=data_dict.get("city", None),
+            state=data_dict.get("state", None),
+            zip_code=data_dict.get("zip-code", None),
+            seen_therapist=data_dict["seen-therapist"],  # Assuming these fields are mandatory and always present
+            medications=data_dict["medications"],
+            medication_details=data_dict.get("medication-details", None)
+        )
     return {"message": "Survey submitted successfully"}
     # except Exception as e:
     #     print(f"Error saving survey response: {e}")
