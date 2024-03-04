@@ -1,28 +1,40 @@
 import React, { useState } from 'react'
-import { Navigate, Link, useNavigate } from 'react-router-dom'
+import { Navigate, Link, useNavigate } from 'react-router-dom' // Navigation and routing utilities from react-router-dom
 import { useAuth } from '../../../contexts/authContext'
-import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
+import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth' // Firebase function to create user with email and password
 
 const Register = () => {
+    const navigate = useNavigate() // Hook to programmatically navigate users
 
-    const navigate = useNavigate()
-
+    // State hooks for managing form inputs and registration status
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setconfirmPassword] = useState('')
-    const [isRegistering, setIsRegistering] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    const [isRegistering, setIsRegistering] = useState(false) // Tracks if registration is in progress
+    const [errorMessage, setErrorMessage] = useState('') // Stores any error message
 
-    const { userLoggedIn } = useAuth()
+    const { userLoggedIn } = useAuth() // Destructuring to get the userLoggedIn state from the auth context
 
+    // Handler for form submission
     const onSubmit = async (e) => {
-        e.preventDefault()
-        if(!isRegistering) {
-            setIsRegistering(true)
-            await doCreateUserWithEmailAndPassword(email, password)
+        e.preventDefault() // Prevent default form submission behavior
+        if (!isRegistering) {
+            setIsRegistering(true) // Prevents multiple submissions
+            try {
+                // Attempts to create a user with the provided email and password
+                await doCreateUserWithEmailAndPassword(email, password)
+                // Optional: navigate to another route upon successful registration
+                // navigate('/some-route');
+            } catch (error) {
+                // Catches and sets any error that occurs during registration
+                setErrorMessage(error.message)
+            } finally {
+                setIsRegistering(false) // Resets the registering status regardless of outcome
+            }
         }
     }
 
+    // Redirects to the home page if the user is already logged in
     return (
         <>
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
