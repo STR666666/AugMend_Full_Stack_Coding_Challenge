@@ -5,18 +5,24 @@ Please see requirements.txt
 
 # Usage
 
-## Run
-1. pip install -r requirements.txt
-2. Add in firebase configuration in src/firebase/firebase.js
-3. Both fastAPI and the frontend NEEDS to be run together. To do so, you can open two new terminals
-    i. fastAPI
-        a. cd fastAPI
-        b. uvicorn store_data_db:app --reload
-    ii. frontend
-        a. cd src
-        b. npm install
-        c. npm start
-4. Go to http://localhost:3000/ and begin your process.
+## Running the Application
+
+- pip install -r requirements.txt
+- Add in firebase configuration in src/firebase/firebase.js
+
+This application requires both the FastAPI backend and the React frontend to be running simultaneously. Please follow the instructions below to start each component in separate terminals.
+
+### Starting the FastAPI Backend
+1. cd fastAPI
+2. uvicorn store_data_db:app --reload
+
+### Starting teh React Frontend
+1. cd src
+2. npm install
+3. npm start
+
+
+Eventually, go to http://localhost:3000/ and begin your process.
 
 ## Check Database
 1. Download SQLite in Extension
