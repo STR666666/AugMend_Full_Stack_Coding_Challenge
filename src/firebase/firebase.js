@@ -3,13 +3,13 @@ import { getAuth } from "firebase/auth";
 
 // Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAWiX_du77JWgV6bge75lmtPGBF0lvwtS0",
-  authDomain: "augmend-coding-challenge.firebaseapp.com",
-  projectId: "augmend-coding-challenge",
-  storageBucket: "augmend-coding-challenge.appspot.com",
-  messagingSenderId: "152645514998",
-  appId: "1:152645514998:web:4889832801bfe7d7b41ed7",
-  measurementId: "G-CS1ERTJ5YN"
+  apiKey: "API-KEY",
+  authDomain: "AUTH-DOMAIN",
+  projectId: "PROJECTID",
+  storageBucket: "STORAGEBUCKET",
+  messagingSenderId: "messagingSenderId",
+  appId: "appId",
+  measurementId: "measurementId"
   };
 
 const app = initializeApp(firebaseConfig);
