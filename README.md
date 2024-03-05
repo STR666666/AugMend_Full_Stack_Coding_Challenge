@@ -44,7 +44,7 @@ Then, I discovered Firebase, which offers a broad range of authentication method
 
 Later, I attempted to hardcode the survey part using JavaScript. However, after some research, I discovered SurveyJS, an incredibly efficient tool. I then learned how to use it and implemented it according to the instructions, even experimenting with new features like a camera.
 
-### fastAPI
+### FastAPI
 Fortunately, I had some experience with FastAPI. I developed store_data_db.py to be highly efficient, but connecting the frontend and backend was time-consuming. I managed to figure out how to use HTTP requests and fetch operations for the UI, then worked on linking the users' information to FastAPI. Although SurveyJS facilitated the creation of JSON files for the frontend, merging this data with the backend was challenging. Running 'npm start' with the console open only indicated when an instruction was incorrect, without specifying the error. I encountered various errors, including 3000, 404, and 4000, which took a long time to resolve. Eventually, I identified the issue as a mismatch between FastAPI's Pydantic Models and the content from JSON.stringify(sender.data) in SurveyComponent.jsx under src/survey. Encountering both successful and unsuccessful messages repeatedly was frustrating, as I was trying to implement a dynamic ORM database.
 
 ### Database
