@@ -73,7 +73,6 @@ async def submit_survey(survey_data: SurveyResponseSchema):
             seen_therapist=data_dict["seen-therapist"],  # Assuming these fields are mandatory and always present
             medications=data_dict["medications"],
         )
-        print(medication_details)
         
         # Process medication details if present
         if data_dict["medications"] == "Yes" and medication_details:
